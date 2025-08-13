@@ -1,10 +1,15 @@
 from django.shortcuts import render
+#SIGNUP VIEW
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from .serializers import UserSignupSerializer
 
-# Create your views here.
+#LOGIN VIEW
+from django.contrib.auth import authenticate
+from rest_framework_simplejwt.tokens import RefreshToken
+
+
 class SignUpView(APIView):
     def post(self, request):
         #create instance of SignupSerializer & populate it with data from client
@@ -28,3 +33,43 @@ class SignUpView(APIView):
         else:
             #return errors & error response
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        
+
+class LoginView(APIView):
+    def post(self, request):
+        #get email & password from req
+        email = request.data.get("email")
+        password = request.data.get("password")
+
+        #make sure both fields present
+        if not email or not password:
+            return Response(
+                {"error": "Email and password are required."},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+        
+        #authenticate user
+        user = authenticate(request, email=email, password=password)
+        #if authentication fails return error message
+        if user is None:
+            return Response(
+                {"error": "Invalid email or password"},
+                status=status.HTTP_401_UNAUTHORIZED
+            )
+        
+        #if authentication - create JWT tokens & return tokens
+        refresh = RefreshToken.for_user(user)   #long-lived token to get new access token
+        access = refresh.access_token   #access token used for requests
+
+        #return tokens 
+        return Response(
+            {
+                "refresh": str(refresh),
+                "access": str(access),
+                "user": {
+                    "id": user.id,
+                    "email": user.email
+            }
+        },
+        status=status.HTTP_200_OK
+    )
