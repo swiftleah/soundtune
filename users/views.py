@@ -1,11 +1,10 @@
 from django.shortcuts import render
-#SIGNUP VIEW
+
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework import status
-from .serializers import UserSignupSerializer
-
-#LOGIN VIEW
+from rest_framework.permissions import IsAuthenticated
+from rest_framework import status, generics
+from .serializers import UserSignupSerializer, UserProfileSerializer
 from django.contrib.auth import authenticate
 from rest_framework_simplejwt.tokens import RefreshToken
 
@@ -73,3 +72,11 @@ class LoginView(APIView):
         },
         status=status.HTTP_200_OK
     )
+
+
+class UserProfileView(generics.RetrieveAPIView):
+    serializer_class = UserProfileSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_object(self):
+        return self.request.user

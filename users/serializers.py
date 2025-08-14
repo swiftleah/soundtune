@@ -34,3 +34,9 @@ class UserSignupSerializer(serializers.ModelSerializer):
         #use custom user manager to create user
         user = CustomUser.objects.create_user(**validated_data) #dict of validated data received through serializer
         return user
+    
+
+class UserProfileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CustomUser
+        fields = ['id', 'full_name', 'email']
