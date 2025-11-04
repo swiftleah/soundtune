@@ -7,6 +7,8 @@ body {
     hsla(20 90% 60%) 100%
   );
   background-attachment: fixed;
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 .navbar {
@@ -20,8 +22,6 @@ body {
 .navbar a {
   text-decoration: none;
   color: white;
-  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 .nav-links {
@@ -59,4 +59,42 @@ body {
     hsla(20, 90%, 60%, 1) 0%,
     hsla(340, 75%, 70%, 1) 100%
   );
+}
+
+/* Main Headings */
+.headings {
+  justify-items: center;
+}
+.soundtune-main {
+  font-size: 70px;
+  margin-bottom: 1.5rem;
+}
+.headings .sound {
+  color: white;
+}
+.headings .tune {
+  color: hsla(20 90% 60%);
+}
+.mood-main {
+  font-size: 30px;
+  line-height: 2rem;
+  color: hsla(0, 0%, 100%, 0.8);
+  font-weight: 500;
+  margin-top: 0px;
+}
+
+/* Soundtune ANIMATE */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.animate-float {
+  animation: float 3s ease-in-out infinite;
 }
