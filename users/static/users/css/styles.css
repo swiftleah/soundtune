@@ -67,6 +67,7 @@ body {
 }
 .soundtune-main {
   font-size: 70px;
+  margin-top: 8rem;
   margin-bottom: 1.5rem;
 }
 .headings .sound {
@@ -97,4 +98,48 @@ body {
 }
 .animate-float {
   animation: float 3s ease-in-out infinite;
+}
+
+/* Option cards */
+.options-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+}
+.option-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: 140px;
+  min-width: 100px;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  height: auto;
+  border-radius: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.75rem;
+}
+.option-title {
+  color: white;
+  font-weight: 500;
+  margin-bottom: 0;
+  margin-top: 0;
+  font-size: 18px;
+}
+.option-desc {
+  color: white;
+  font-weight: 400;
+  margin-top: 0;
+  font-size: 12px;
+}
+
+.option-icon {
+  margin-bottom: 0;
+  color: white;
+  font-size: 25px;
 }
