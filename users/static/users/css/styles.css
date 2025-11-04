@@ -1,0 +1,62 @@
+body {
+  height: 100%;
+  margin: 0;
+  background: linear-gradient(
+    to bottom,
+    hsla(40 95% 75%) 0%,
+    hsla(20 90% 60%) 100%
+  );
+  background-attachment: fixed;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between; /* space between navbar sections */
+  align-items: center;
+  padding: 25px 40px;
+  background-color: transparent;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.logo .sound {
+  color: white;
+}
+
+.logo .tune {
+  color: hsla(20 90% 60%);
+}
+
+.btn {
+  color: hsla(0, 0%, 100%, 1);
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  border: 1.5px solid transparent;
+  border-color: hsla(0, 0%, 100%, 0.4);
+  background-color: hsla(0, 0%, 100%, 0.1);
+}
+
+.btn-primary {
+  background: linear-gradient(
+    to bottom right,
+    hsla(20, 90%, 60%, 1) 0%,
+    hsla(340, 75%, 70%, 1) 100%
+  );
+}
