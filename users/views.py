@@ -80,3 +80,6 @@ class UserProfileView(generics.RetrieveAPIView):
 
     def get_object(self):
         return self.request.user
+    
+def dashboard(request):
+    return render(request, 'dashboard.html')
