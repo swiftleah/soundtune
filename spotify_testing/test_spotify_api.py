@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 from requests import post, get
 import json
 import random
+from non_english_words import non_english_keywords # non_english_keywords
 
 load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), '..', '.env'))
 
@@ -47,7 +48,7 @@ def get_random_songs(limit=5):
         
         search_url = "https://api.spotify.com/v1/search"
         params = {
-            "q": "genre:r&b",           # Base genre
+            "q": "genre:hiphop",           # Base genre
             "type": "track",
             "market": "US",              # more likely to be english music
             "limit": 25,                
@@ -75,16 +76,6 @@ def get_random_songs(limit=5):
             
             # strong English indicators
             is_english = True
-            
-            # 1. filter out known non-English artists/languages
-            non_english_keywords = [
-                'bts', 'blackpink', 'twice', 'exo', 'stray kids', 'seventeen', 'aespa', 'itzy',
-                'bad bunny', 'j balvin', 'anuel', 'karol g', 'ozuna', 'maluma',
-                'daddy yankee', 'enrique iglesias',
-                'bts', 'psy', 'bigbang', 'nct', 'ateez', 'ive', 'newjeans', 'le sserafim',
-                'burning', 'despacito', 'taki taki', 'con calma', 'china', 'mi gente',
-                'dákiti', 'hawái', 'yonaguni', 'te boté'
-            ]
             
             # 2. skip songs with obvious non-Latin characters
             if any(ord(char) > 127 for char in track['name'] + artist_name):
