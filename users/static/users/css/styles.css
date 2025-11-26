@@ -151,3 +151,10 @@ body {
   color: white;
   font-size: 25px;
 }
+
+/* --- SHARED PANEL CONTAINER --- */
+.shared-panel-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
