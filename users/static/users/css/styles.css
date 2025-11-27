@@ -167,3 +167,8 @@ body {
   color: rgba(255, 255, 255, 0.7);
   font-weight: 380;
 }
+
+.option-card.active {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.6);
+}
