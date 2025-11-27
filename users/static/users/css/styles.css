@@ -158,3 +158,12 @@ body {
   justify-content: center;
   margin-top: 2.5rem;
 }
+
+#shared-panel .panel-block h4 {
+  margin: 0;
+  text-align: center;
+  font-size: 0.9rem;
+  line-height: 1.25rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 380;
+}
