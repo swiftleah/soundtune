@@ -6,6 +6,7 @@ const pillOptions = {
     "hiphop",
     "r&b",
     "metal",
+    "rock",
     "reggae",
     "electronic",
     "jazz",
