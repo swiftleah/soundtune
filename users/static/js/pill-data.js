@@ -1,0 +1,42 @@
+//  ---- js object that maps the template ID to an array of pill labels ----
+
+const pillOptions = {
+  "content-genre": [
+    "rap",
+    "hiphop",
+    "r&b",
+    "metal",
+    "reggae",
+    "electronic",
+    "jazz",
+    "metal",
+    "country",
+    "latin",
+  ],
+  "content-mood": [
+    "happy",
+    "sad",
+    "anxious",
+    "chill",
+    "energetic",
+    "romantic",
+    "angry",
+    "tired",
+    "excited",
+    "moody",
+    "peaceful",
+  ],
+  "content-activity": [
+    "working out",
+    "studying",
+    "driving",
+    "cooking",
+    "cleaning",
+    "relaxing",
+    "gaming",
+    "walking",
+    "showering",
+    "sleeping",
+    "commuting",
+  ],
+};
