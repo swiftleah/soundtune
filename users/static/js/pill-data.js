@@ -41,3 +41,21 @@ const pillOptions = {
     "commuting",
   ],
 };
+
+// --- array checker ---
+// --- check that array is of expected length + is real array ---
+function validatePillOptions(expectedCount = 11) {
+  Object.entries(pillOptions).forEach(([key, arr]) => {
+    if (!Array.isArray(arr)) {
+      console.warn(`pillOptions["${key}"] is not an array.`);
+      return;
+    }
+    if (arr.length != expectedCount) {
+      console.warn(
+        `pillOptions["${key}"] has ${arr.length} items instead of ${expectedCount}.`
+      );
+    }
+  });
+}
+
+validatePillOptions();
